@@ -1,0 +1,140 @@
+/* Contact.module.css */
+.contact {
+  background: var(--bg-secondary);
+}
+
+.header {
+  margin-bottom: 56px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 56px;
+  align-items: start;
+}
+
+/* ---- Info ---- */
+.infoText {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 32px;
+  font-size: 0.95rem;
+}
+
+.contactLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contactLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.87rem;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+}
+
+.contactLink svg { color: var(--accent); flex-shrink: 0; }
+.contactLink:hover { color: var(--accent); }
+
+/* ---- Form ---- */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.input,
+.textarea {
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  resize: none;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--text-muted);
+}
+
+/* ---- Submit button ---- */
+.submitBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  align-self: flex-start;
+  padding: 12px 28px;
+  border-radius: 24px;
+  background: var(--accent);
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  letter-spacing: 0.02em;
+}
+
+.submitBtn:hover:not(:disabled) {
+  opacity: 0.88;
+  transform: translateY(-2px);
+}
+
+.submitBtn.loading {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ---- Success ---- */
+.successMsg {
+  font-size: 0.87rem;
+  color: #6aab7e;
+  font-weight: 500;
+  padding: 10px 16px;
+  background: rgba(106, 171, 126, 0.1);
+  border-radius: 10px;
+  border: 1px solid rgba(106, 171, 126, 0.2);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; gap: 36px; }
+  .row { grid-template-columns: 1fr; }
+  .submitBtn { align-self: stretch; }
+}
